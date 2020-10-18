@@ -217,6 +217,11 @@ NFe.prototype.valorUnidade = function () {
   return this
 }
 
+NFe.prototype.unidade = function () {
+  this.temp = this._extract(/<uCom>(.+?)<\/uCom>/i)
+  return this
+}
+
 NFe.prototype.valorFrete = function () {
   this.temp = this._extract(/<vfrete>(.+?)<\/vfrete>/i)
   return this
