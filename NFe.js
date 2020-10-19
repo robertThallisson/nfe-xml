@@ -107,7 +107,7 @@ NFe.prototype.icms = function () {
   return this
 }
 
-NFe.prototype.icmsst = function () {
+NFe.prototype.icmsST = function () {
   this.temp = this._extract(/<vicmsst>(.+?)<\/vicmsst>/i) ||
             this._extract(/<vst>(.+?)<\/vst>/i)
   return this
@@ -196,11 +196,20 @@ NFe.prototype.baseCalculo = function () {
   return this
 }
 
+NFe.prototype.aliquota = function () {
+  this.temp = this._extract(/<pICMS>(.+?)<\/pICMS>/i)
+  return this
+}
+
 NFe.prototype.baseCalculoST = function () {
   this.temp = this._extract(/<vbcst>(.+?)<\/vbcst>/i)
   return this
 }
 
+NFe.prototype.aliquotaST = function () {
+  this.temp = this._extract(/<pICMSST>(.+?)<\/pICMSST>/i)
+  return this
+}
 NFe.prototype.valor = function () {
   this.temp = this._extract(/<vprod>(.+?)<\/vprod>/i) ||
             this._extract(/<vicms>(.+?)<\/vicms>/i) ||
